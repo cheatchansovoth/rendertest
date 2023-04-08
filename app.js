@@ -3,6 +3,7 @@ const app = express();
 const stripe = require("stripe")(
   "sk_test_51MtiOvJFziKWwKoooAjJuJXZT1E1ufaA3Ybkzs5uOd0nb9fYl7uwnacBh4sTKY2sGFzI9jtlr6jLpcCzk18BENa800t7PKjab1"
 );
+const cors = require("cors");
 app.use(express.json());
 
 app.get("/", (req, res) => {
