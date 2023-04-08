@@ -6,6 +6,9 @@ app.use(express.json());
 app.get("/", (req, res) => {
   res.send("Hello World");
 });
+app.get("/test", (req, res) => {
+  res.send("Hello World");
+});
 app.post("/", (req, res) => {
   res.json({ message: "Hello World" });
 });
