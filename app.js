@@ -12,7 +12,7 @@ app.get("/", (req, res) => {
 app.get("/test", (req, res) => {
   res.send("Hello World");
 });
-const YOUR_DOMAIN = "http://localhost:5000";
+const YOUR_DOMAIN = "https://clockson.vercel.app";
 app.post("/create-checkout-session", async (req, res) => {
   const line_items = req.body.data.cart.map((item) => {
     return {
@@ -33,7 +33,7 @@ app.post("/create-checkout-session", async (req, res) => {
   const session = await stripe.checkout.sessions.create({
     line_items,
     mode: "payment",
-    success_url: `${YOUR_DOMAIN}/success.html`,
+    success_url: `${YOUR_DOMAIN}/shop/success`,
     cancel_url: `${YOUR_DOMAIN}/`,
   });
   res.send({ url: session.url });
